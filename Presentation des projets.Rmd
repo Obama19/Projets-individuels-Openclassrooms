@@ -1,0 +1,105 @@
+---
+title: ""
+author: ""
+output:
+  html_document:
+    df_print: paged
+  word_document:
+    fig_caption: true
+    keep_md: true
+    reference_docx: template.docx
+editor_options:
+  chunk_output_type: console
+---
+
+
+
+```{r installation des librairies, include=FALSE}
+
+#date: "`r Sys.Date()`"
+
+library(knitr)
+library(kableExtra)
+
+```
+
+
+<style>
+h1 { color: darkblue; }
+h2 { color: darkred; }
+h3 { color: green; }
+</style>
+
+
+
+```{r image a inclure, echo=FALSE}
+include_graphics("datanalysis.jpg")
+```
+
+
+Les différents projets présentés ont été réalisés dans le cadre d’une formation de **Data Analyst** suivie sur la plateforme **OpenClassrooms**.
+Chaque projet met en pratique un ensemble de tâches représentatives des missions généralement proposées en entreprise.
+Ces projets sont variés et couvrent un large éventail de secteurs tels que la santé et le e-commerce.
+Ils ont été développés principalement avec les langages **Python** et **R**.
+
+Les jeux de données utilisés proviennent, d’une part, de sources en libre accès fournies par des organisations internationales comme la **FAO** (*Food and Agriculture Organization*) ou le **PAM** (*Programme Alimentaire Mondial*), ainsi que de services publics français tels que **l’INSEE**.
+D’autre part, certains projets s’appuient sur des jeux de données spécialement fournis par la plateforme de formation.
+
+
+# DESCRPTION DES PROJETS
+
+
+```{r Definition des projets, message=FALSE, warning=FALSE, include=FALSE}
+
+
+
+desc_proj <- data.frame(
+  Projet = c("Etude sur la faim dans le monde", "Analyse des ventes d'une boutique de e-commerce"),
+  Description = c("Cette étude consiste à réaliser une description de la sous nutrition dans le monde sur la période 2013-2017.Premièrement il est question d'identifier la distribution, entre les différentes régions du monde, de la production et de l'usage de la disponibilité alimenatire mondiale. Ensuite nous identifions les pays qui connaissent le plus des situations de famine.", " L'objectif du projet est de traiter, nettoyer et joindre les données (les différentes tables)  issues de l'activité d'un site de e-commerce spéacailisé dans la vente de vin. L'analyse de l'activité du site est également effectuée apres la préparation des des données."),
+  Données = c("Données de la FAO (Food And agricUlture organization), sur : l'aide alimentaire, les disponibilités alimentaires mondiales  et l'insécurité alimentaire.", "Deux jeux de données sont utilisés : l'extraction erp de l'entreprise et l'extraction du site web de l'entreprise sur les la vente des produits")
+)
+
+
+
+
+
+
+# 
+# desc_proj <- data.frame(
+#   Projet = c("Etude sur la faim dans le monde", "Anna", "Marc"),
+#   Description = c("Cette étude consiste à réaliser une description de la sous nutrition dans le monde sur la période 2013-2017.Premièrement il est question d'identifier la distribution, entre les différentes régions du monde, de la production et de l'usage de la disponibilité alimenatire mondiale. Ensuite nous identifions les pays qui connaissent le plus des situations de famine.", 28, 35),
+#   Données = c("Données de la FAO (Food And agricUlture organization), sur : l'aide alimentaire, les disponibilités alimentaires mondiales  et l'insécurité alimentaire.", "Lyon", "Marseille"),
+#   Compétences_developpées = c("Identification et traitement des outliers ; standardisation des variables ;  construction des fonctions pour faciliter l'analyse des données, construction des indicateurs de sous nutritions ; Construction des graphiques avec la librairie python matplotlib", "Lyo", "Marseill")
+# )
+
+
+```
+
+
+
+
+
+
+```{r presentation des projets, echo=FALSE, message=FALSE, warning=FALSE}
+
+# "basic", "striped", "bordered", "hover***", "condensed**", "responsive", "none"
+
+
+
+kable(desc_proj,
+      format = "html",
+      longtable = TRUE) %>%
+kable_styling(
+  bootstrap_options = "hover",
+  position = "c",
+  full_width = TRUE)
+
+
+# 
+# %>% 
+#   column_spec( kable_input =  desc_proj)
+
+
+
+```
+
